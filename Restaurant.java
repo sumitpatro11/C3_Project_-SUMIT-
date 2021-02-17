@@ -67,4 +67,18 @@ public class Restaurant {
         return name;
     }
 
+    public List addToOrder(String name){
+
+        List<Item> order = new ArrayList<Item>();
+        order.add(menu.get(name));
+        return order;
+
+    }
+    public int calculateCost(List order){
+        int totalCost=0;
+        for(int i=;i<=order.size();i++) totalCost = totalCost + order.get(i, Item.getPrice());
+        return totalCost;
+    }
+
+
 }
